@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мамандықтар | ORDA Халықаралық Колледжі</title>
+    <meta name="description" content="ORDA колледжінің барлық мамандықтары">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Header бөлігі -->
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Мамандықтар</h1>
+            <p>38+ мамандық, 4 оқу бағыты</p>
+        </div>
+    </section>
+
+    <!-- Programs Filter -->
+    <section class="programs-filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Барлығы</button>
+                <button class="filter-btn" data-filter="it">IT технологиялары</button>
+                <button class="filter-btn" data-filter="business">Бизнес</button>
+                <button class="filter-btn" data-filter="education">Білім беру</button>
+                <button class="filter-btn" data-filter="creative">Шығармашылық</button>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="programSearch" placeholder="Мамандықты іздеу...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Grid -->
+    <section class="programs-grid-section">
+        <div class="container">
+            <div class="programs-grid" id="programsContainer">
+                <!-- Programs will be loaded here -->
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Categories -->
+    <section class="categories-section">
+        <div class="container">
+            <h2>Мамандық санаттары</h2>
+            <div class="categories-grid">
+                <div class="category-card it">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>IT технологиялары</h3>
+                    <p>8 мамандық</p>
+                    <ul>
+                        <li>Веб-дизайн</li>
+                        <li>Бағдарламалау</li>
+                        <li>Киберқауіпсіздік</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card business">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Бизнес және экономика</h3>
+                    <p>7 мамандық</p>
+                    <ul>
+                        <li>Бухгалтерлік есеп</li>
+                        <li>Маркетинг</li>
+                        <li>Менеджмент</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card education">
+                    <div class="category-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Білім беру</h3>
+                    <p>6 мамандық</p>
+                    <ul>
+                        <li>Мектепке дейінгі тәрбие</li>
+                        <li>Бастауыш білім</li>
+                        <li>Шет тілі</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card creative">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Шығармашылық өнер</h3>
+                    <p>5 мамандық</p>
+                    <ul>
+                        <li>Дизайн</li>
+                        <li>Аударма ісі</li>
+                        <li>Мәдениеттану</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Info -->
+    <section class="admission-info">
+        <div class="container">
+            <div class="info-card">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <h3>Оқу мерзімі</h3>
+                    <p>9 сынып үшін: 3 жыл 10 ай<br>11 сынып үшін: 2 жыл 10 ай</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <div>
+                    <h3>Төлем</h3>
+                    <p>Айына 25 000 - 45 000 теңге<br>Мемлекеттік гранттар бар</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                    <h3>Қабылдау мерзімі</h3>
+                    <p>20 маусым - 25 тамыз<br>Грантқа өтініш беру: 20 маусым - 10 шілде</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Footer бөлігі -->
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="programs.js"></script>
+</body>
+</html>

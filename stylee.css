@@ -1,0 +1,448 @@
+/* ===== TECHNICAL FEATURES STYLES ===== */
+
+/* Ғылыми диаграммалар */
+.scientific-diagram {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: var(--radius-xl);
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.1),
+        0 8px 32px rgba(212, 175, 55, 0.15);
+}
+
+.diagram-axis {
+    position: absolute;
+    background: var(--science-blue);
+}
+
+.diagram-axis-x {
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+}
+
+.diagram-axis-y {
+    width: 2px;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.diagram-point {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Химиялық элементтер стилі */
+.periodic-element {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--science-blue), var(--science-dark));
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: var(--font-mono);
+    position: relative;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.periodic-element:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.element-number {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.element-symbol {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.element-name {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* Математикалық формулалар */
+.math-formula {
+    font-family: var(--font-mono);
+    background: rgba(212, 175, 55, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--gold-primary);
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+.math-symbol {
+    color: var(--gold-primary);
+    font-weight: 700;
+}
+
+/* Лабораториялық жабдықтар */
+.lab-equipment {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 2px solid var(--science-silver);
+}
+
+.lab-equipment::before {
+    content: '⚗️';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    background: white;
+    padding: 0 1rem;
+}
+
+.test-tube {
+    width: 40px;
+    height: 120px;
+    background: linear-gradient(to bottom, 
+        rgba(59, 130, 246, 0.1) 0%,
+        rgba(59, 130, 246, 0.3) 30%,
+        rgba(16, 185, 129, 0.3) 70%,
+        rgba(239, 68, 68, 0.1) 100%);
+    border-radius: 20px 20px 4px 4px;
+    position: relative;
+    border: 2px solid var(--science-silver);
+}
+
+/* Ғарыш темасы */
+.space-theme {
+    background: radial-gradient(ellipse at center, 
+        var(--science-dark) 0%,
+        #000000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+        var(--gold-primary) 0%,
+        var(--gold-dark) 100%);
+    box-shadow: inset -20px -20px 40px rgba(0,0,0,0.5);
+}
+
+/* Кванттық механика анимациясы */
+.quantum-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    animation: quantum-move 3s infinite linear;
+    box-shadow: 0 0 10px var(--gold-light);
+}
+
+@keyframes quantum-move {
+    0%, 100% { 
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    25% { 
+        transform: translate(100px, 50px);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translate(50px, 100px);
+        opacity: 0.2;
+    }
+    75% { 
+        transform: translate(100px, 0);
+        opacity: 0.8;
+    }
+}
+
+/* ДНК спиралі */
+.dna-strand {
+    position: relative;
+    width: 200px;
+    height: 400px;
+}
+
+.dna-base {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: var(--gradient-gold);
+    transform-origin: bottom center;
+}
+
+.dna-connection {
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: var(--science-blue);
+    opacity: 0.5;
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+
+/* Ғылыми карталар */
+.science-map {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.map-node {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--gold-primary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    z-index: 2;
+}
+
+.map-node:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.map-connection {
+    position: absolute;
+    height: 2px;
+    background: var(--science-blue);
+    opacity: 0.3;
+    transform-origin: 0 0;
+    z-index: 1;
+}
+
+/* Интерактивті диаграмма */
+.interactive-chart {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+}
+
+.chart-tooltip {
+    position: absolute;
+    background: var(--gradient-header);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.chart-tooltip.active {
+    opacity: 1;
+}
+
+/* ===== 3D EFFECTS ===== */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card-3d-inner {
+    transition: transform var(--transition-base);
+    transform-style: preserve-3d;
+}
+
+.card-3d:hover .card-3d-inner {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* ===== NEOMORPHISM ===== */
+.neomorphic {
+    background: var(--science-light);
+    border-radius: var(--radius-lg);
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.1),
+        -8px -8px 16px rgba(255, 255, 255, 0.5);
+}
+
+.neomorphic-inset {
+    background: var(--science-light);
+    border-radius: var(--radius-lg);
+    box-shadow: 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* ===== GLASS MORPHISM ===== */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.gold-glass {
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.1) 0%,
+        rgba(255, 215, 0, 0.05) 100%
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* ===== GRADIENT BORDERS ===== */
+.gradient-border {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-lg);
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-gold);
+    border-radius: calc(var(--radius-lg) + 2px);
+    z-index: -1;
+}
+
+/* ===== ANIMATED BACKGROUNDS ===== */
+.animated-bg {
+    background: linear-gradient(
+        -45deg,
+        var(--science-dark),
+        var(--science-blue),
+        var(--science-navy),
+        var(--science-dark)
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== PARTICLE EFFECTS ===== */
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    background: var(--gold-light);
+    border-radius: 50%;
+    animation: float-particle 3s infinite ease-in-out;
+}
+
+@keyframes float-particle {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY ===== */
+@media (max-width: 768px) {
+    .math-formula {
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .periodic-element {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .element-symbol {
+        font-size: 1.25rem;
+    }
+    
+    .element-name {
+        font-size: 0.5rem;
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATION ===== */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+/* ===== PRINT OPTIMIZATION ===== */
+@media print {
+    .scientific-diagram,
+    .periodic-element,
+    .math-formula {
+        break-inside: avoid;
+    }
+    
+    .animated-bg {
+        background: white !important;
+    }
+    
+    .glass,
+    .gold-glass {
+        background: white;
+        border: 1px solid #ddd;
+    }
+}

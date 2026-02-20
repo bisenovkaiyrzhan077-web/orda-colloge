@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея | ORDA Халықаралық Колледжі</title>
+    <meta name="description" content="ORDA колледжінің фото және видео галереясы">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Gallery specific styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery-categories {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Header бөлігі -->
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Галерея</h1>
+            <p>Колледждің өмірінен лептер</p>
+        </div>
+    </section>
+
+    <!-- Gallery Categories -->
+    <section class="gallery-categories-section">
+        <div class="container">
+            <div class="gallery-categories">
+                <button class="category-btn active" data-category="all">Барлығы</button>
+                <button class="category-btn" data-category="campus">Кампус</button>
+                <button class="category-btn" data-category="classes">Сабақтар</button>
+                <button class="category-btn" data-category="events">Іс-шаралар</button>
+                <button class="category-btn" data-category="sport">Спорт</button>
+                <button class="category-btn" data-category="graduation">Түлектер</button>
+                <button class="category-btn" data-category="teachers">Оқытушылар</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Gallery -->
+    <section class="photos-gallery">
+        <div class="container">
+            <h2>Фото галерея</h2>
+            <div class="gallery-grid" id="photosGrid">
+                <!-- Photos will be loaded here -->
+                <div class="gallery-item" data-category="campus">
+                    <img src="images/gallery/campus1.jpg" alt="Колледж ғимараты" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Колледж ғимараты</h3>
+                        <p>Негізгі оқу ғимараты</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="classes">
+                    <img src="images/gallery/class1.jpg" alt="IT класы" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>IT класы</h3>
+                        <p>Заманауи компьютерлік класс</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events">
+                    <img src="images/gallery/event1.jpg" alt="Студенттік кеш" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Студенттік кеш</h3>
+                        <p>Мәдениет кеші</p>
+                    </div>
+                </div>
+                
+                <!-- More gallery items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section class="video-gallery">
+        <div class="container">
+            <h2>Видео галерея</h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="images/videos/tour.jpg" alt="Виртуалды тур" loading="lazy">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h3>Виртуалды тур</h3>
+                    <p>Колледждің виртуалды экскурсиясы</p>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="images/videos/graduation.jpg" alt="Түлектер күні" loading="lazy">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h3>Түлектер күні 2023</h3>
+                    <p>2023 жылғы түлектердің мерекесі</p>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="images/videos/interview.jpg" alt="Директор сұхбаты" loading="lazy">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h3>Директор сұхбаты</h3>
+                    <p>Колледж директорымен сұхбат</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+        <div class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Footer бөлігі -->
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>

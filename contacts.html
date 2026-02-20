@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Байланыс | ORDA Халықаралық Колледжі</title>
+    <meta name="description" content="ORDA колледжімен байланысу мекен-жайы, телефондары">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .department-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+        
+        .instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
+        .facebook { background: #1877F2; }
+        .telegram { background: #0088CC; }
+        .youtube { background: #FF0000; }
+        .whatsapp { background: #25D366; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Header бөлігі -->
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Байланыс</h1>
+            <p>Бізбен байланысыңыз</p>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="contact-grid-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Хабарлама жіберу</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Аты-жөніңіз *</label>
+                            <input type="text" id="contactName" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Электрондық пошта *</label>
+                            <input type="email" id="contactEmail" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Телефон нөмірі</label>
+                            <input type="tel" id="contactPhone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Тақырып *</label>
+                            <select id="contactSubject" name="subject" required>
+                                <option value="">Тақырыпты таңдаңыз</option>
+                                <option value="admission">Қабылдау бойынша</option>
+                                <option value="programs">Мамандықтар бойынша</option>
+                                <option value="grants">Гранттар бойынша</option>
+                                <option value="hostel">Жатақхана бойынша</option>
+                                <option value="other">Басқа сұрақ</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Хабарлама *</label>
+                            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Хабарлама жіберу
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Map -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.123456789012!2d65.12345678901234!3d44.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDA3JzI0LjQiTiA2NcKwMDcnMjQuNCJF!5e0!3m2!1skk!2skz!4v1234567890123!5m2!1skk!2skz" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <h2>Байланыс ақпараты</h2>
+            <div class="contact-info-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Мекен-жай</h3>
+                    <p>Қызылорда қаласы<br>Қонаев көшесі, 17</p>
+                    <a href="#" class="btn btn-secondary btn-sm">
+                        <i class="fas fa-directions"></i> Бағыт
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Телефондар</h3>
+                    <p><strong>Қабылдау:</strong> +7 (7242) 27-75-27</p>
+                    <p><strong>Оқу бөлімі:</strong> +7 (7242) 27-75-28</p>
+                    <p><strong>Жатақхана:</strong> +7 (7242) 27-75-29</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Электрондық пошта</h3>
+                    <p><strong>Негізгі:</strong> info@ordacollege.kz</p>
+                    <p><strong>Қабылдау:</strong> admission@ordacollege.kz</p>
+                    <p><strong>Қаржы бөлімі:</strong> finance@ordacollege.kz</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Жұмыс уақыты</h3>
+                    <p><strong>Дүйсенбі-Жұма:</strong> 9:00 - 18:00</p>
+                    <p><strong>Сенбі:</strong> 9:00 - 15:00</p>
+                    <p><strong>Түскі үзіліс:</strong> 13:00 - 14:00</p>
+                    <p><strong>Жексенбі:</strong> Демалыс</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments -->
+    <section class="departments-section">
+        <div class="container">
+            <h2>Бөлімшелер</h2>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <h3><i class="fas fa-user-graduate"></i> Қабылдау комиссиясы</h3>
+                    <p><strong>Телефон:</strong> +7 (7242) 27-75-27</p>
+                    <p><strong>Email:</strong> admission@ordacollege.kz</p>
+                    <p><strong>Мекен-жай:</strong> Негізгі ғимарат, 1 қабат</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Оқу бөлімі</h3>
+                    <p><strong>Телефон:</strong> +7 (7242) 27-75-28</p>
+                    <p><strong>Email:</strong> education@ordacollege.kz</p>
+                    <p><strong>Мекен-жай:</strong> Негізгі ғимарат, 2 қабат</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3><i class="fas fa-user-tie"></i> Кадрлар бөлімі</h3>
+                    <p><strong>Телефон:</strong> +7 (7242) 27-75-29</p>
+                    <p><strong>Email:</strong> hr@ordacollege.kz</p>
+                    <p><strong>Мекен-жай:</strong> Негізгі ғимарат, 2 қабат</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3><i class="fas fa-money-bill-wave"></i> Қаржы бөлімі</h3>
+                    <p><strong>Телефон:</strong> +7 (7242) 27-75-30</p>
+                    <p><strong>Email:</strong> finance@ordacollege.kz</p>
+                    <p><strong>Мекен-жай:</strong> Негізгі ғимарат, 1 қабат</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3><i class="fas fa-bed"></i> Жатақхана бөлімі</h3>
+                    <p><strong>Телефон:</strong> +7 (7242) 27-75-31</p>
+                    <p><strong>Email:</strong> hostel@ordacollege.kz</p>
+                    <p><strong>Мекен-жай:</strong> Жатақхана ғимараты</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3><i class="fas fa-book"></i> Кітапхана</h3>
+                    <p><strong>Телефон:</strong> +7 (7242) 27-75-32</p>
+                    <p><strong>Email:</strong> library@ordacollege.kz</p>
+                    <p><strong>Мекен-жай:</strong> Негізгі ғимарат, 3 қабат</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-media-section">
+        <div class="container">
+            <h2>Әлеуметтік желілер</h2>
+            <p>Бізді әлеуметтік желілерде қадағалаңыз</p>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/ordacollege" class="social-link instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/ordacollege" class="social-link facebook" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://t.me/ordacollege" class="social-link telegram" target="_blank">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="https://youtube.com/ordacollege" class="social-link youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/77771234567" class="social-link whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            
+            <div class="social-profiles">
+                <div class="profile-card">
+                    <i class="fab fa-instagram"></i>
+                    <div>
+                        <h4>Instagram</h4>
+                        <p>@ordacollege</p>
+                        <a href="https://instagram.com/ordacollege" target="_blank" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-external-link-alt"></i> Көру
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="profile-card">
+                    <i class="fab fa-telegram"></i>
+                    <div>
+                        <h4>Telegram</h4>
+                        <p>@ordacollege</p>
+                        <a href="https://t.me/ordacollege" target="_blank" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-external-link-alt"></i> Көру
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Жиі қойылатын сұрақтар</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Қабылдау қашан басталады?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Қабылдау 2024 жылдың 20 маусымынан басталып, 25 тамызына дейін жалғасады.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Гранттар бар ма?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Иә, мемлекеттік гранттар бар. Гранттар шектеулі санда беріледі.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Жатақхана бар ма?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Иә, колледж студенттері үшін жатақхана бар. Айына 15.000 теңге.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Footer бөлігі -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

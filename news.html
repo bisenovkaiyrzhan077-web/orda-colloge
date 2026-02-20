@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жаңалықтар | ORDA Халықаралық Колледжі</title>
+    <meta name="description" content="ORDA колледжінің соңғы жаңалықтары мен іс-шаралары">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .news-category {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+        }
+        
+        .page-btn {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .page-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Header бөлігі -->
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Жаңалықтар</h1>
+            <p>Колледждің соңғы оқиғалары мен іс-шаралары</p>
+        </div>
+    </section>
+
+    <!-- News Categories -->
+    <section class="news-categories">
+        <div class="container">
+            <div class="categories">
+                <button class="category-btn active" data-category="all">Барлығы</button>
+                <button class="category-btn" data-category="admission">Қабылдау</button>
+                <button class="category-btn" data-category="events">Іс-шаралар</button>
+                <button class="category-btn" data-category="achievements">Жетістіктер</button>
+                <button class="category-btn" data-category="announcements">Хабарландырулар</button>
+                <button class="category-btn" data-category="partnerships">Ынтымақтастық</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="news-grid-section">
+        <div class="container">
+            <div class="news-grid" id="newsContainer">
+                <!-- News will be loaded here -->
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/news/admission-2024.jpg" alt="Қабылдау 2024" loading="lazy">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar"></i>
+                            <span>15 мамыр 2024</span>
+                            <span class="news-category">Қабылдау</span>
+                        </div>
+                        <h3>2024-2025 оқу жылына қабылдау басталды</h3>
+                        <p>ORDA колледжінде 2024-2025 оқу жылына қабылдау рәсімі басталды. Өтініштерді 20 маусымнан бастап қабылдаймыз.</p>
+                        <a href="news-detail.html?id=1" class="btn btn-secondary">Толығырақ</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/news/graduates-2023.jpg" alt="Түлектер" loading="lazy">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar"></i>
+                            <span>10 мамыр 2024</span>
+                            <span class="news-category">Жетістіктер</span>
+                        </div>
+                        <h3>2023 жылғы түлектердің 95%-ы жұмыс тапты</h3>
+                        <p>2023 жылы бітірген түлектердің 95%-ы біліміне сай жұмыс орнына орналасты.</p>
+                        <a href="news-detail.html?id=2" class="btn btn-secondary">Толығырақ</a>
+                    </div>
+                </div>
+                
+                <!-- More news cards -->
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">5</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Announcements -->
+    <section class="announcements-section">
+        <div class="container">
+            <h2>Маңызды хабарландырулар</h2>
+            <div class="announcements">
+                <div class="announcement important">
+                    <div class="announcement-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="announcement-content">
+                        <h3>Грантқа өтініш беру мерзімі</h3>
+                        <p>Мемлекеттік грантқа өтініш беру 10 шілдеге дейін жүреді.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement info">
+                    <div class="announcement-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="announcement-content">
+                        <h3>Жатақханаға орналасу</h3>
+                        <p>Жатақханаға орналасу бойынша құжаттарды тапсыру 15 тамыздан басталады.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement warning">
+                    <div class="announcement-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="announcement-content">
+                        <h3>Қабылдау тестілері</h3>
+                        <p>Қабылдау тестілері тамыз айының 15-20 аралығында өтеді.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <h2>Жаңалықтарға жазылыңыз</h2>
+                    <p>Соңғы жаңалықтар мен іс-шаралар туралы хабардар болыңыз.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Электрондық поштаңыз" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Жазылу
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Footer бөлігі -->
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="news.js"></script>
+</body>
+</html>
